@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
 using Cubanos.BusinessEntity;
 using Cubanos.Service;
 using Microsoft.Practices.Unity;
@@ -12,7 +13,7 @@ using System.Web.ModelBinding;
 
 namespace Cubanos.Web.Clientes
 {
-    public partial class frmListarRutina : System.Web.UI.Page
+    public partial class frmListarEjercicios : System.Web.UI.Page
     {
         [Dependency]
         public ICubanosGymService _cubanosGymService { get; set; }
@@ -28,15 +29,12 @@ namespace Cubanos.Web.Clientes
 
                 lblCliente.Text = "Default";
             }
-        }
 
-        public IEnumerable<Rutina> ListarRutina()
+        }
+        public IEnumerable<DetalleEjercicioToRutina> ListarEjercicios()
         {
-            int x = Convert.ToInt32(Request["listRutinas"]);
-
-            return _cubanosGymService.ListarRutina(x);
-
+            int x = Convert.ToInt32(Request["listEjercicios"]);
+            return _cubanosGymService.ListarEjercicios(x);
         }
-
     }
 }

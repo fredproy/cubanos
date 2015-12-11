@@ -48,7 +48,7 @@
                                         <th>Fecha Fin</th>
                                         <th>Precio</th>
                                         <th>Cupos</th>
-                                        <th>Instructor</th>                                        
+                                        <th>Instructor</th>                                           
                                         <th>Acciones</th>
                                     </tr>
                                 </thead>
@@ -65,6 +65,7 @@
                                 <td><%# Item.Precio %></td>
                                 <td><%# Item.Stock %></td>
                                 <td><%# Item.Empleado.ApellidoPaterno+" "+Item.Empleado.ApellidoMaterno + " " + Item.Empleado.Nombres %></td>
+                                
                                 <td>
                                     <a href="frmCurso.aspx?acc=editar&id=<%# Item.Id %>" class="btn btn-primary"><i class="icon_pencil-edit_alt"></i></a>
                                     <a href="frmCurso.aspx?acc=eliminar&id=<%# Item.Id %>" class="btn btn-danger"><i class="icon_close_alt2"></i></a>

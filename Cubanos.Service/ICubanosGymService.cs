@@ -22,16 +22,20 @@ namespace Cubanos.Service
         IEnumerable<Paquete> ListarPaquete(String criterio, DateTime? fechaInicio, DateTime? fechaFin);  //listar Paquete
         //....................................................
         //Plan
-        IEnumerable<Plan> ListarPlan(DateTime? fechaInicio, DateTime? fechaFin);  // listar Plan
-                                                                                  //....................................................
+        IEnumerable<Plan> ListarPlan(Int32 clienteId);  // listar Plan
+                                                        //....................................................
 
         //Rutina
-        //IEnumerable<Rutina> ListarRutina(String criterio);
+        IEnumerable<Rutina> ListarRutina(Int32 planId);
         //.........................................................
 
         //Empleado
         IEnumerable<Empleado> ListarEmpleado(String criterio);    //listar Empleado
         void InsertarEmpleado(Empleado empleado);               //Registrar Empleado
+        //.........................................................
+
+        //Ejercicio
+        IEnumerable<DetalleEjercicioToRutina> ListarEjercicios(Int32 ejerciciosId);
         //.........................................................
     }
 }

@@ -65,10 +65,9 @@ namespace Cubanos.Repository
         //........................................................................
 
         //plan
-        public IEnumerable<Plan> ListarPlan(DateTime? fechaInicio, DateTime? fechaFin)    //listar Plan
+        public IEnumerable<Plan> ListarPlan(Int32 clienteId)    //listar Plan
         {
-            return Context.Planes.Include("Cliente")
-                .Where(x => (x.FechaInicio >= fechaInicio && x.FechaFin <= fechaFin));
+            return Context.Planes.Where(x => (x.ClienteId == clienteId)).OrderBy(o => o.FechaInicio);
 
         }
         //..........................................................................
@@ -92,10 +91,15 @@ namespace Cubanos.Repository
         //.........................................................................
 
         //Rutina
-        //public IEnumerable<Rutina> ListarRutina(string criterio)
-        //{
-        //    return Context.Rutinas.Where(x => (x.Objetivo.Contains(criterio))).OrderBy(o => o.Objetivo);
-        //}
+        public IEnumerable<Rutina> ListarRutina(Int32 planId)
+        {
+            return Context.Rutinas.Where(x => (x.PlanId == planId)).OrderBy(o => o.NroOrden);
+        }
+
+        public IEnumerable<DetalleEjercicioToRutina> ListarEjercicios(Int32 ejerciciosId)
+        {
+            return Context.DetalleEjercicioToRutinas.Where(x => (x.EjercicioId == ejerciciosId)).OrderBy(o => o.NroOrden).ToList();
+        }
         //.........................................................................
     }
 }
