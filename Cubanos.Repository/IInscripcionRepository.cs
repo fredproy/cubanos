@@ -10,5 +10,6 @@ namespace Cubanos.Repository
     public interface IInscripcionRepository
     {
         void AddInscripcionCursos(Inscripcion inscripcion);
+        IEnumerable<Inscripcion> GetAllInscripciones(String criterio);
     }
 }

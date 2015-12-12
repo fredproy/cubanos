@@ -103,6 +103,33 @@ namespace Cubanos.Web.Clientes {
         protected global::System.Web.UI.WebControls.TextBox txtTelefonoCliente;
         
         /// <summary>
+        /// Control radio_libre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton radio_libre;
+        
+        /// <summary>
+        /// Control radio_curso.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton radio_curso;
+        
+        /// <summary>
+        /// Control radio_paquete.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton radio_paquete;
+        
+        /// <summary>
         /// Control upCursoLibre.
         /// </summary>
         /// <remarks>

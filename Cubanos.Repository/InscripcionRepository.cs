@@ -30,5 +30,19 @@ namespace Cubanos.Repository
             Context.Inscripciones.Add(inscripcion);
             Context.SaveChanges();
         }
+
+        public IEnumerable<Inscripcion> GetAllInscripciones(String criterio) 
+        {
+            var query = from q in Context.Inscripciones.Include(c => c.Cliente)
+                        select q;
+
+            if (!String.IsNullOrEmpty(criterio))
+            {
+                query = from c in query
+                        where c.Cliente.Dni.Contains(criterio)
+                        select c;
+            }
+            return query;
+        }
     }
 }

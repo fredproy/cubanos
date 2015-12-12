@@ -18,5 +18,10 @@ namespace Cubanos.Service
         {
             _InscripcionRepository.AddInscripcionCursos(inscripcion);
         }
+
+        public IEnumerable<Inscripcion> GetAllInscripciones(String criterio) 
+        {
+            return _InscripcionRepository.GetAllInscripciones(criterio);
+        }
     }
 }

@@ -5,7 +5,7 @@
 
     <script>
         $(function () {
-            $("#radio_libre").click(function () {
+            $("#<%= radio_libre.ClientID %>").click(function () {                
                 if (!$("#radio").is(':checked')) {
                     $("#libre").removeClass("hide");
                     $("#curso").addClass("hide");
@@ -15,7 +15,7 @@
                 }
             });
 
-            $("#radio_curso").click(function () {
+            $("#<%= radio_curso.ClientID %>").click(function () {
                 if (!$("#radio").is(':checked')) {
                     $("#libre").addClass("hide");
                     $("#curso").removeClass("hide");
@@ -25,7 +25,7 @@
                 }
             });
 
-            $("#radio_paquete").click(function () {
+            $("#<%= radio_paquete.ClientID %>").click(function () {
                 if (!$("#radio").is(':checked')) {
                     $("#libre").addClass("hide");
                     $("#curso").addClass("hide");
@@ -130,16 +130,16 @@
                             <div class="form-group">                                        
                                 <label class="control-label col-lg-3">Seleccionar</label>    
                                 <div class="col-lg-2">
-                                    <%--<asp:RadioButton runat="server" ID="rbtnLibres" Text="Cursos Libres" CssClass="form-control" Checked="true" GroupName="Seleccion" />--%>
-                                    <input type="radio" name="seleccion" value="Libre" checked id="radio_libre" /> Libre
+                                    <asp:RadioButton runat="server" ID="radio_libre" Text=" Cursos Libres" Checked="true" GroupName="Seleccion" />
+                                    <%--<input type="radio" name="seleccion" value="Libre" checked id="radio_libre" /> Libre--%>
                                 </div>
                                 <div class="col-lg-2">
-                                    <%--<asp:RadioButton runat="server" ID="rbtnCursos" Text="Cursos" CssClass="form-control" GroupName="Seleccion" />--%>
-                                    <input type="radio" name="seleccion" value="Curso" id="radio_curso" /> Cursos
+                                    <asp:RadioButton runat="server" ID="radio_curso" Text=" Cursos" GroupName="Seleccion" />
+                                    <%--<input type="radio" name="seleccion" value="Curso" id="radio_curso" /> Cursos--%>
                                 </div>
                                 <div class="col-lg-2">
-                                    <%--<asp:RadioButton runat="server" ID="rbtnPaquetes" Text="Paquetes" CssClass="form-control" GroupName="Seleccion" />--%>
-                                    <input type="radio" name="seleccion" value="Paquete" id="radio_paquete" /> Paquetes
+                                    <asp:RadioButton runat="server" ID="radio_paquete" Text=" Paquetes" GroupName="Seleccion" />
+                                    <%--<input type="radio" name="seleccion" value="Paquete" id="radio_paquete" /> Paquetes--%>
                                 </div>
                             </div>
                         </fieldset>
@@ -440,11 +440,11 @@
                                             OnItemCommand="lvPaquetes_ItemCommand">
                                             <LayoutTemplate>
                                                 <table class="table table-responsive col-lg-10 table-bordered table-hover">
-                                                    <thead>             
+                                                    <thead>
                                                         <tr>
                                                             <th>Nombre</th>
                                                             <th>Precio</th>
-                                                            <th>Stock</th>                                                           
+                                                            <th>Stock</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>

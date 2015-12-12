@@ -10,5 +10,6 @@ namespace Cubanos.Service
     public interface IInscripcionService
     {
         void AddInscripcionCursos(Inscripcion inscripcion);
+        IEnumerable<Inscripcion> GetAllInscripciones(String criterio);
     }
 }
