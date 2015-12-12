@@ -23,16 +23,20 @@ namespace Cubanos.Repository
         //.........................................................
 
         //Plan
-        IEnumerable<Plan> ListarPlan(DateTime? fechaInicio, DateTime? fechaFin);
+        IEnumerable<Plan> ListarPlan(Int32 clienteId);
         //.........................................................
 
         //Rutina
-        //IEnumerable<Rutina> ListarRutina(String criterio);
+        IEnumerable<Rutina> ListarRutina(Int32 planId);
         //.........................................................
 
         //Empleado
         IEnumerable<Empleado> ListarEmpleado(String criterio);
         void InsertarEmpleado(Empleado empleado);
+        //.........................................................
+
+        //Rutina
+        IEnumerable<DetalleEjercicioToRutina> ListarEjercicios(Int32 ejerciciosId);
         //.........................................................
 
     }

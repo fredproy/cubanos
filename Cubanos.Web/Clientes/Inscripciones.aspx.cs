@@ -20,7 +20,7 @@ namespace Cubanos.Web.Clientes
            
         }
 
-        public IEnumerable<> GetInscripciones([Control("txtCriterio")] String criterio)
+        public IEnumerable<Inscripcion> GetInscripciones([Control("txtCriterio")] String criterio)
         {
             return _InscripcionService.GetAllInscripciones(criterio);
         }

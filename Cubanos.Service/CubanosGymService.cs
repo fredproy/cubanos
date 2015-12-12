@@ -57,9 +57,9 @@ namespace Cubanos.Service
         //............................................................
 
         //Plan
-        public IEnumerable<Plan> ListarPlan(DateTime? fechaInicio, DateTime? fechaFin)
+        public IEnumerable<Plan> ListarPlan(Int32 clienteId)
         {
-            return _cubanosGymRepository.ListarPlan(fechaInicio, fechaFin);
+            return _cubanosGymRepository.ListarPlan(clienteId);
         }
         //.............................................................
 
@@ -75,11 +75,20 @@ namespace Cubanos.Service
         }
         //............................................................
 
-        //Rutina
-        //public IEnumerable<Rutina> ListarRutina(string criterio)
-        //{
-        //    return _cubanosGymRepository.ListarRutina(criterio);
-        //}
+        //rutina
+        public IEnumerable<Rutina> ListarRutina(int planId)
+        {
+            return _cubanosGymRepository.ListarRutina(planId);
+        }
+        //..............................................................
+
+        //Ejercicios
+        public IEnumerable<DetalleEjercicioToRutina> ListarEjercicios(Int32 ejerciciosId)
+        {
+            return _cubanosGymRepository.ListarEjercicios(ejerciciosId);
+        }
         //............................................................
+
+
     }
 }

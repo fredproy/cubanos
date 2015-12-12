@@ -19,23 +19,23 @@ namespace Cubanos.Web.Clientes
         public ICubanosGymService _cubanosGymService { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+            try
+            {
+                string name = (Convert.ToString(Request["name"])).ToUpper();
+                lblCliente.Text = name;
+            }
+            catch (Exception)
+            {
+
+                lblCliente.Text = "Default";
+            }
 
         }
-        public IEnumerable<Plan> ListarPlan([Control("txtFechaInicio")]DateTime? fechaInicio,
-                                           [Control("txtFechaFin")]DateTime? fechaFin)
+        public IEnumerable<Plan> ListarPlan()
         {
-            if (fechaInicio != null && fechaFin != null)
-            {
-                return _cubanosGymService.ListarPlan(fechaInicio, fechaFin);
-            }
+            int x = Convert.ToInt32(Request["listPlanes"]);
 
-            else
-            {
-                fechaInicio = DateTime.MinValue;
-                fechaFin = DateTime.MaxValue;
-                return _cubanosGymService.ListarPlan(fechaInicio, fechaFin);
-
-            }
+            return _cubanosGymService.ListarPlan(x);
         }
     }
 }

@@ -9,28 +9,9 @@
     </h1>
     <hr/>
 
-    <div class="row">      
-                     
-        <div class="col-md-4 navbar-form navbar-input-group">            
-            <b>Fecha Inicio:</b>
-            <asp:TextBox runat="server" ID="txtFechaInicio" Type="date" class="form-control" placeholder="Buscar Paquete"/>
-        </div>
-        <div class="col-md-4 navbar-form navbar-input-group"> 
-            <b>Fecha Fin:</b>
-            <asp:TextBox runat="server" ID="txtFechaFin" Type="date" class="form-control" placeholder="Buscar Paquete"/>
-         </div>
-        <div class="col-md-2 navbar-form navbar-input-group"> 
-            &nbsp;<asp:Button runat="server" ID="btnBuscar" Text="Buscar" class="btn btn-primary"/> 
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        </div>
-        
-        
-
+    <div class="row">
+        <b>Cliente:</b>&nbsp;&nbsp;&nbsp;<asp:Label ID="lblCliente" runat="server" Text=""></asp:Label>
+    </div>                
         <div class="col-md-2 navbar-form navbar-input-group"> 
             <%--FrmHabitacion.aspx es a donde se linkea--%>
             <button type="button" class="btn btn-primary" aria-label="Left Align" onclick="location.href='frmCrearPersona.aspx'">
@@ -54,7 +35,7 @@
         <table class="table table-striped table-condensed table-hover">
             <thead>            
                 <tr>                   
-                    <th>Nombre cliente</th>                    
+                    <th>Descripcion</th>                    
                     <th>Fecha Inicio</th>
                     <th>Fecha Fin</th>
                     <th>Detalle de rutina</th>
@@ -68,12 +49,12 @@
     </LayoutTemplate>
     <ItemTemplate>
             <tr>
-                <td><%# Item.Cliente.ApellidoPaterno %> <%# Item.Cliente.ApellidoMaterno %> <%# Item.Cliente.Nombres%></td>
+                <td><%# Item.Descripcion %></td>
                 <td><%# Item.FechaInicio %> </td>
                 <td><%# Item.FechaFin %></td>
-                <td>Detalle</td>                
-                          
-                
+                <td>
+                    <a href="frmListarRutina.aspx?listRutinas=<%# Item.Id %>">Rutinas</span></a>
+                </td>         
                 <td>
                     <a href="frmCrearPersona.aspx?acc=editar&id=<%# Item.Id %>">Editar</a>
                     <a href="frmCrearPersona.aspx?acc=eliminar&id=<%# Item.Id %>"
